@@ -2,9 +2,9 @@
 var app = angular.module('myApp', ['ngMaterial']);
 
 //Controller for myApp
-app.controller('VehicleController', function($scope, $http, $mdDialog) {
+app.controller('VehicleController', function($scope, $http, $mdDialog, $location) {
 
-    var URL = 'http://localhost:8080/vehicleservice'; 
+    var URL = $location.absUrl() + '/vehicleservice';
     $scope.vehicles = [];
     $scope.vehicleForm = {
         id : 0,
